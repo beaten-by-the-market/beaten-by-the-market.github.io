@@ -577,15 +577,31 @@ plt.show()
 ```python
 # 2024년 내역 확인
 df_show = df_dart_buyback[df_dart_buyback['연도']==2024].sort_values(by='취득예정금액(원)_취득예정금액(원)_보통주식', ascending=False)
-df_show[['회사명_회사명_회사명', '접수일_접수일_접수일', '취득예정주식(주)_취득예정주식(주)_보통주식', '취득예정금액(원)_취득예정금액(원)_보통주식', '연도', 'method']]
+
+#필요한 칼럼만 남기기
+df_show = df_show[['회사명_회사명_회사명', '접수일_접수일_접수일', '취득예정주식(주)_취득예정주식(주)_보통주식', '취득예정금액(원)_취득예정금액(원)_보통주식', '연도', 'method']]
+
+#칼럼명 수정
+df_show.columns = ['회사명', '접수일', '취득예정주식(주)', '취득예정금액(억원)', '연도', 'method']
+
+# HTML 변환 및 커스텀 태그로 감싸기
+html_table = df_show.to_html(index=False, classes="dataframe", escape=False)
+
+# 테이블을 <div> 태그로 감싸기
+wrapped_html = f"""
+<div class="table-container">
+  {html_table}
+</div>
+"""
+print(html_table)
 ```
 <table border="1" class="dataframe dataframe">
   <thead>
     <tr style="text-align: right;">
-      <th>회사명_회사명_회사명</th>
-      <th>접수일_접수일_접수일</th>
-      <th>취득예정주식(주)_취득예정주식(주)_보통주식</th>
-      <th>취득예정금액(원)_취득예정금액(원)_보통주식</th>
+      <th>회사명</th>
+      <th>접수일</th>
+      <th>취득예정주식(주)</th>
+      <th>취득예정금액(억원)</th>
       <th>연도</th>
       <th>method</th>
     </tr>
