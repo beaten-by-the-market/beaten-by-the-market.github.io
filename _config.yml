@@ -19,7 +19,7 @@ locale                   : "ko-KR"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
 title                    : "Beaten by the Market"
 title_separator          : "|"
-subtitle                 : "...Towards Market Authenticity"
+subtitle                 : "...Toward Market Authenticity"
 name                     : "Jae Kwang Peter Jung"
 description              : "시장을 알아가는 블로그입니다."
 url                      : "https://beaten-by-the-market.github.io"
