@@ -84,7 +84,7 @@ google:
 # SEO Related
 google_site_verification :
 bing_site_verification   :
-naver_site_verification  :
+naver_site_verification  : "2919a8eeeb6ccb8398430107a5b0210229108085"
 yandex_site_verification :
 baidu_site_verification  :
 
@@ -227,7 +227,7 @@ sass:
 
 # Outputting
 permalink: /:categories/:title/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Seoul
 
 
 # Pagination with jekyll-paginate
@@ -290,16 +290,16 @@ tag_archive:
   type: liquid
   path: /tags/
 # https://github.com/jekyll/jekyll-archives
-# jekyll-archives:
-#   enabled:
-#     - categories
-#     - tags
-#   layouts:
-#     category: archive-taxonomy
-#     tag: archive-taxonomy
-#   permalinks:
-#     category: /categories/:name/
-#     tag: /tags/:name/
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-taxonomy
+    tag: archive-taxonomy
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
 
 
 # HTML Compression
