@@ -10,7 +10,7 @@
 # Review documentation to determine if you should use `theme` or `remote_theme`
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
-# theme                    : "minimal-mistakes-jekyll"
+# theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
@@ -20,7 +20,7 @@ rtl                      : # true, false (default) # turns direction of the page
 title                    : "Beaten by the Market"
 title_separator          : "|"
 subtitle                 : "...Towards Market Authenticity"
-name                     : "Jae Kwang Peter"
+name                     : "Jae Kwang Peter Jung"
 description              : "시장을 알아가는 블로그입니다."
 url                      : "https://beaten-by-the-market.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -114,7 +114,7 @@ analytics:
 # Site Author
 author:
   name             : "Jae Kwang Peter"
-  avatar           : "/assets/images/logo.jpg"
+  avatar: "/assets/images/logo.png"
   bio              : "시장을 알아가는 블로그입니다"
   location         : "Seoul"
   # email            : yoyogwang88@gmail.com
