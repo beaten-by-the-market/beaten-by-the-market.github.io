@@ -98,6 +98,7 @@ author_profile: false
 ![search_example]({{site.url}}/assets/images/2025-01-21-buybackexpl/search_example.jpg)<br>
 <br>
 예시로 2025년 1월 20일에 제출된 엠씨넥스라는 코스피 상장법인의 공시를 클릭해보겠습니다.<br>
+
 ![example1]({{site.url}}/assets/images/2025-01-21-buybackexpl/example1.jpg)
 <br>
 <br>
