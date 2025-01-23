@@ -88,6 +88,11 @@ author_profile: false
   </style>
 </head>
 
+**[관련 포스팅]** [자사주 매매 프로세스](https://beaten-by-the-market.github.io/%ED%95%9C%EA%B5%AD%EC%8B%9C%EC%9E%A5/buybackexplanation/)<br>
+**[관련 포스팅]** [자사주 매매 데이터출처](https://beaten-by-the-market.github.io/%ED%95%9C%EA%B5%AD%EC%8B%9C%EC%9E%A5/buybackexplanation2/)
+{:.notice--success}
+
+<br>
 
 ## 데이터 수집 및 시각화 방향
 
@@ -513,7 +518,7 @@ OpenDart API가 아닌 웹페이지에서 크롤링해오다보니, 회사명에
 
 
 ### 자사주 직접처분 데이터 시각화
-
+---
 
 ![resaleall]({{site.url}}/assets/images/2025-01-23-buyback-resaleinsight/resaleall.png)<br><br>
 
@@ -597,6 +602,7 @@ OpenDart API가 아닌 웹페이지에서 크롤링해오다보니, 회사명에
 
 
 ### 처분방법별 주식수를 통해 분석하기
+---
 
 앞서말씀드렸다시피, 자사주처분공시에서는 '처분방법'을 방법별 주식수로 기재하고 있습니다. 이렇게 장내, 장외를 미리 구분해주었으므로, 이를 바탕으로 붙석을 진행합니다.
 <br>
@@ -1031,7 +1037,7 @@ OpenDart API가 아닌 웹페이지에서 크롤링해오다보니, 회사명에
 
 
 ##### 자사주 처분 시사점
-
+---
 * **장매처분 물량**{: style="color: #4682B4;"}<br>
 장내에서 자사주를 처분하는 수량은 정말 낮았습니다. 아무래도 시장에 자사주 물량을 풀게 되면, 자사의 주가가 낮아지는 압력을 받을텐데, 쉽지 않은 결정일 것이라는 생각은 들었습니다. 그런 생각이 들었는데, 실제로 수치로 확인하게 되니 신기하기도 합니다.<br>
 
