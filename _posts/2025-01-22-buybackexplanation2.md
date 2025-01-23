@@ -2,7 +2,7 @@
 layout: single
 title:  "자사주 취득의 데이터는 어디서 구할까? (2편)"
 categories: 한국시장
-tag: [data background, opendart]
+tag: [data background, opendart, 자기주식]
 toc: true
 author_profile: false
 ---
