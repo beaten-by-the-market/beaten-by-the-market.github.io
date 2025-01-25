@@ -1,7 +1,7 @@
 ---
 layout: single
-title:  "코스피 무상증자 내역분석(1)"
-categories: 한국시장
+title:  "코스피 무상증자 내역분석(1)(파이썬해설)"
+categories: 파이썬 해설
 tag: [python, opendart, 무상증자]
 toc: true
 author_profile: false
