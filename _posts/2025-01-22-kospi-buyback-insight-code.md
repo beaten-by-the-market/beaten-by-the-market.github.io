@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "10년간 코스피 자사주 직접취득 현황(파이썬 해설)"
-categories: 한국시장
+categories: 파이썬 해설
 tag: [python, opendart, insight, 자기주식]
 toc: true
 author_profile: false
