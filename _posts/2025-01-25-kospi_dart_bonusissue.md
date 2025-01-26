@@ -1,8 +1,8 @@
 ---
 layout: single
-title:  "코스피 무상증자 내역분석(1)"
+title:  "코스피 무상증자 현황 둘러보기"
 categories: 한국시장
-tag: [python, opendart, insight, 무상증자]
+tag: [python, opendart, insight, 무상증자는 기업가치에 영향을 미칠까?]
 toc: true
 author_profile: false
 ---
@@ -77,11 +77,11 @@ author_profile: false
     font-size: 1.0rem !important;
   }
 
-  .notice--success a {
+  .notice--success {
   font-size: 1.2rem !important; 
   }
 
-  .notice--info a {
+  .notice--info {
   font-size: 1.2rem !important; 
   }
 

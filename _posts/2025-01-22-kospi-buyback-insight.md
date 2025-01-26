@@ -77,11 +77,11 @@ author_profile: false
     font-size: 1.0rem !important;
   }
 
-  .notice--success a {
+  .notice--success {
   font-size: 1.2rem !important; 
   }
 
-  .notice--info a {
+  .notice--info {
   font-size: 1.2rem !important; 
   }
 

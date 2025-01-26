@@ -2,7 +2,7 @@
 layout: single
 title:  "10년간 코스피 자사주 직접 '처분' 현황(파이썬 해설)"
 categories: 파이썬해설
-tag: [python, opendart, insight, 자기주식]
+tag: [python, opendart, 자기주식]
 toc: true
 author_profile: false
 ---
@@ -77,11 +77,11 @@ author_profile: false
     font-size: 1.0rem !important;
   }
 
-  .notice--success a {
+  .notice--success {
   font-size: 1.2rem !important; 
   }
 
-  .notice--info a {
+  .notice--info {
   font-size: 1.2rem !important; 
   }
 
