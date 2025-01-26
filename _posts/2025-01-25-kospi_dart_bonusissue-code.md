@@ -85,13 +85,20 @@ author_profile: false
   font-size: 1.2rem !important; 
   }
 
+  .notice--warning {
+  font-size: 1.0rem !important;
+  }
+
   </style>
 </head>
 
 
-[**코스피 무상증자 내역분석(1)**](https://beaten-by-the-market.github.io/%ED%95%9C%EA%B5%AD%EC%8B%9C%EC%9E%A5/kospi_dart_bonusissue/)을 수행한 파이썬 코드를 해설하는 포스팅입니다.
+[**코스피 무상증자 현황 둘러보기**](https://beaten-by-the-market.github.io/%ED%95%9C%EA%B5%AD%EC%8B%9C%EC%9E%A5/kospi_dart_bonusissue/)을 수행한 파이썬 코드를 해설하는 포스팅입니다.
 {:.notice--info}
 
+
+**'무상증자는 기업가치에 영향을 미칠까?'**주제에 대해 일련의 포스팅을 작성해보고자 합니다. 블로그 상단의 'Tag'를 통해 본 주제와 관련된 포스팅을 모아볼 수 있습니다.
+{:.notice--warning}
 
 ## 데이터 수집 및 시각화 방향
 

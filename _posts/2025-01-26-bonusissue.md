@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "무상증자는 기업가치(주가)에 영향을 미칠까?"
+title:  "무상증자의 회계처리와 기업가치"
 categories: 한국시장
 tag: [data background, 무상증자는 기업가치에 영향을 미칠까?]
 toc: true
