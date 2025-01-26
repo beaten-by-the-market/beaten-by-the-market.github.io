@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "코스피 무상증자 내역분석(1)(파이썬해설)"
-categories: 파이썬 해설
+categories: 파이썬해설
 tag: [python, opendart, 무상증자]
 toc: true
 author_profile: false
@@ -110,7 +110,7 @@ author_profile: false
 ## 금감원 공시를 통해 **무상증자결정** 통계 불러오기
 
 
-#### 코랩 환경에서 데이터 수집, 시각화를 하기 위해 필요한 라이브러리를 설치
+### 코랩 환경에서 데이터 수집, 시각화를 하기 위해 필요한 라이브러리를 설치
 
 
 
@@ -141,7 +141,7 @@ fontpath = '/usr/share/fonts/truetype/nanum/NanumBarunGothic.ttf'
 font = fm.FontProperties(fname=fontpath, size=10)
 ```
 
-###### 검색기준 설정하기
+### 검색기준 설정하기
 
 검색 기준은 "유가", "2015~2024"년으로 하였습니다. 참고로 **OpenDart는 2015년부터 데이터를 제공**{: style="color: #4682B4;"}합니다.<br>
 
@@ -199,7 +199,8 @@ params
  'reportCode': '11307',
  'corpType': 'P'}
 </pre>
-###### 총 몇건, 몇페이지인지 확인하기
+
+### 총 몇건, 몇페이지인지 확인하기
 
 지금같이 10년치 데이터를 확인하려면 데이터의 행이 많을 것입니다.<br>
 
@@ -247,7 +248,7 @@ total_counts: 142
 </pre>
 **총 142건**{: style="color: #4682B4;"}이 있고, 총 2페이지에 걸쳐있습니다. 코스피 시장에선 많지 않네요. 참고로 같은 기간 **코스닥에서는 499건**{: style="color: #4682B4;"} 있었습니다.<br>
 
-###### 데이터 수집하기
+### 데이터 수집하기
 
 그럼 7번의 loop으로 HTML에 포함된 데이터프레임을 추출하고, 합치는 과정(pd.concat)을 진행하도록 하겠습니다.<br>
 
@@ -283,7 +284,7 @@ for i in range(2, total_page + 1):
   df_dart_bi = pd.concat([df_dart_bi, df_loop])
 ```
 
-###### 수집된 데이터프레임 형태 확인
+### 수집된 데이터프레임 형태 확인
 
 데이터프레임이 어떤 형태인지 한번 확인해 보겠습니다.
 
@@ -465,7 +466,7 @@ print(['_'.join(map(str, filter(None, col))) for col in df_dart_bi.columns])
 
 
 
-###### 데이터프레임 전처리
+### 데이터프레임 전처리
 
 
 
@@ -576,7 +577,7 @@ df_dart_bi['회사명'] = df_dart_bi['회사명'].str.replace(r'^(유|코)', '',
 
 ```
 
-###### 전처리한 데이터프레임 확인
+### 전처리한 데이터프레임 확인
 상위 5개 행을 확인해보겠습니다.
 
 
@@ -668,7 +669,9 @@ df_dart_bi
   </tbody>
 </table>
 </pre>
-#### 무상증자 데이터 둘러보기
+
+
+## 무상증자 데이터 둘러보기
 ---
 
 위에서 데이터를 슥 훑어보다보니 몇가지 눈에 띄는 점을 확인했습니다.<br>
@@ -706,8 +709,8 @@ df_dart_bi.loc[:, '발행비율'] = df_dart_bi['신주의수'] / df_dart_bi['기
 제거전: 142
 제거후: 140
 </pre>
-#### 연도별로 몇건의 무상증자가 있었는지 대략적으로 확인
----
+
+## 연도별로 몇건의 무상증자가 있었는지 대략적으로 확인
 
 
 ```python
@@ -733,8 +736,8 @@ plt.show()
 ![histo]({{site.url}}/assets/images/2025-01-25-bonusissue-dart/histo.png)<br><br>
 
 
-#### 연도별로 무상증자 비율분포를 대략적으로 확인
----
+## 연도별로 무상증자 비율분포를 대략적으로 확인
+
 이번엔 연도별로 무상증자의 발행비율이 어느수준으로 되었는지 확인해보기로 합니다. 이러한 분석을 위해서는 boxplot을 사용합니다.
 
 
