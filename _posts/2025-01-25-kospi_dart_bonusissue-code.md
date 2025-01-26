@@ -89,6 +89,10 @@ author_profile: false
 </head>
 
 
+[**코스피 무상증자 내역분석(1)**](https://beaten-by-the-market.github.io/%ED%95%9C%EA%B5%AD%EC%8B%9C%EC%9E%A5/kospi_dart_bonusissue/)을 수행한 파이썬 코드를 해설하는 포스팅입니다.
+{:.notice--info}
+
+
 ## 데이터 수집 및 시각화 방향
 
 
