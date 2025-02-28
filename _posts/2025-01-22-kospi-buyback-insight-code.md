@@ -6,37 +6,112 @@ tag: [python, opendart, 자기주식]
 toc: true
 author_profile: false
 ---
-
 <head>
   <style>
     table.dataframe {
-      white-space: normal;
-      width: auto;
-      max-width: 100%;
-      height: 300px;  /* 고정 높이 유지 */
-      display: inline-block;
-      overflow-x: scroll;  /* 가로 스크롤 */
-      overflow-y: scroll;  /* 세로 스크롤 */
+      white-space: nowrap;     /* 기본적으로 줄바꿈 방지 */
+      width: auto;             /* 컨텐츠에 맞게 너비 자동 조정 */
+      min-width: 100%;         /* 최소 너비는 컨테이너 크기 */
+      max-width: 400%;         /* 최대 너비 제한 400% */
+      max-height: 300px;       /* 최대 높이 */
+      display: block;          /* 블록 요소로 표시 */
+      overflow-x: auto;        /* 가로 스크롤 */
+      overflow-y: auto;        /* 세로 스크롤 */
       font-family: Arial, sans-serif;
       font-size: 0.9rem;
       line-height: 20px;
       text-align: center;
       border: 0px !important;
+      margin-bottom: 10px;     /* 하단 여백 */
     }
 
+    /* 모든 셀에 대한 기본 스타일 */
+    table.dataframe td, 
+    table.dataframe th {
+      max-width: 400px;        /* 셀 최대 너비 제한 */
+      overflow: hidden;        /* 셀 내용 넘침 처리 */
+      text-overflow: ellipsis; /* 넘친 텍스트는 말줄임표로 표시 */
+      white-space: nowrap;     /* 기본적으로 줄바꿈 방지 */
+      box-sizing: border-box;  /* 패딩과 테두리를 너비에 포함 */
+    }
+
+    /* 테이블 헤더 스타일 */
     table.dataframe th {
       text-align: center;
       font-weight: bold;
       padding: 8px;
+      position: sticky;        /* 헤더 고정 */
+      top: 0;                  /* 헤더 고정 위치 */
+      background: #e6f2ff;     /* 파스텔 블루 배경색 */
+      z-index: 2;              /* 헤더가 컨텐츠 위에 표시되도록 */
+      border-bottom: 1px solid #c6d9f1; /* 헤더 하단 경계선 */
+      white-space: nowrap !important; /* 헤더는 항상 줄바꿈 없음 */
     }
 
+    /* 헤더 호버 스타일 */
+    table.dataframe th:hover {
+      background-color: #d0e4ff; /* 호버 시 약간 더 진한 파스텔 블루 */
+      white-space: nowrap !important; /* 호버 시에도 줄바꿈 없음 */
+      overflow: visible;
+      position: relative;
+      z-index: 3;
+    }
+
+    /* 데이터 셀 스타일 */
     table.dataframe td {
       text-align: center;
       padding: 8px;
+      position: relative; /* 호버 효과를 위한 위치 설정 */
     }
 
+    /* 데이터 셀 호버 스타일 - JavaScript로 긴 내용 감지 및 클래스 추가 */
+    table.dataframe td.long-content:hover {
+      white-space: normal; /* 긴 내용이 있는 셀만 호버 시 줄바꿈 허용 */
+      overflow: visible;
+      z-index: 1;
+      background-color: white; /* 내용이 다른 셀을 가릴 때 배경색 */
+      box-shadow: 0 0 5px rgba(0,0,0,0.1); /* 약간의 그림자 효과 */
+    }
+
+    /* 일반 셀 호버 스타일 */
+    table.dataframe td:not(.long-content):hover {
+      white-space: nowrap !important; /* 짧은 내용이 있는 셀은 호버 시에도 줄바꿈 없음 */
+    }
+
+    /* 짝수 행 배경색 */
+    table.dataframe tr:nth-child(even) {
+      background-color: #f8fbff;
+    }
+
+    /* 모든 행에 호버 효과 적용 - 우선순위를 높게 설정 */
     table.dataframe tr:hover {
-      background: #b8d1f3; 
+      background-color: #b8d1f3 !important; /* !important로 짝수행 스타일보다 우선 적용 */
+    }
+
+    /* 정렬 가능한 헤더에 대한 스타일 추가 */
+    table.dataframe th.sortable {
+      cursor: pointer;
+      position: relative;
+      padding-right: 18px; /* 화살표 공간 확보 */
+    }
+    
+    table.dataframe th.sortable::after {
+      content: "↕";
+      position: absolute;
+      right: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.5;
+    }
+    
+    table.dataframe th.sortable.asc::after {
+      content: "↑";
+      opacity: 1;
+    }
+    
+    table.dataframe th.sortable.desc::after {
+      content: "↓";
+      opacity: 1;
     }
 
     .output_prompt {
@@ -56,39 +131,169 @@ author_profile: false
       white-space: pre;
     }
 
-  .dataframe tbody tr th:only-of-type {
-      vertical-align: middle;
-  }
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-  .dataframe tbody tr th {
-      vertical-align: top;
-  }
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-  .dataframe thead th {
-      text-align: center !important;
-      padding: 8px;
-  }
+    .dataframe thead th {
+        text-align: center !important;
+        padding: 8px;
+    }
 
-  .page__content p {
-      margin: 0 0 0px !important;
-  }
+    .page__content p {
+        margin: 0 0 10px !important;
+    }
 
-  .page__content p > strong {
+
+    .page__content p > strong {
+      font-size: 1.0rem !important;
+    }
+
+    .notice--success {
+    font-size: 1.2rem !important; 
+    }
+
+    .notice--info {
+    font-size: 1.2rem !important; 
+    }
+
+    .notice--warning {
     font-size: 1.0rem !important;
-  }
-
-  .notice--success {
-  font-size: 1.2rem !important; 
-  }
-  
-  .notice--info {
-  font-size: 1.2rem !important; 
-  }
-
-
+    }
   </style>
+  
+  <!-- 테이블 정렬을 위한 JavaScript 추가 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 모든 dataframe 테이블의 헤더에 정렬 기능 추가
+      const tables = document.querySelectorAll('table.dataframe');
+      
+      tables.forEach(function(table) {
+        const headers = table.querySelectorAll('thead th');
+        
+        // 긴 내용이 있는 셀 감지하여 클래스 추가
+        const dataCells = table.querySelectorAll('tbody td');
+        dataCells.forEach(function(cell) {
+          // 셀의 실제 내용 길이와 표시 너비 비교
+          const cellContent = cell.textContent;
+          
+          // 임시 요소를 만들어 내용 너비 측정
+          const tempSpan = document.createElement('span');
+          tempSpan.style.visibility = 'hidden';
+          tempSpan.style.position = 'absolute';
+          tempSpan.style.whiteSpace = 'nowrap';
+          tempSpan.style.font = window.getComputedStyle(cell).font;
+          tempSpan.textContent = cellContent;
+          document.body.appendChild(tempSpan);
+          
+          // 내용 너비가 셀 최대 너비(400px)를 초과하면 long-content 클래스 추가
+          const contentWidth = tempSpan.getBoundingClientRect().width;
+          if (contentWidth > 380) { // 약간의 여유 제공 (400px - 패딩)
+            cell.classList.add('long-content');
+          }
+          
+          // 임시 요소 제거
+          document.body.removeChild(tempSpan);
+        });
+        
+        headers.forEach(function(header, index) {
+          // 헤더에 정렬 가능 클래스 추가
+          header.classList.add('sortable');
+          
+          // 헤더 클릭 이벤트 리스너 추가
+          header.addEventListener('click', function() {
+            const isAsc = this.classList.contains('asc');
+            const direction = isAsc ? 'desc' : 'asc';
+            
+            // 모든 헤더에서 정렬 클래스 제거
+            headers.forEach(h => {
+              h.classList.remove('asc', 'desc');
+            });
+            
+            // 클릭된 헤더에 정렬 방향 클래스 추가
+            this.classList.add(direction);
+            
+            // 테이블 정렬 실행
+            sortTable(table, index, direction);
+          });
+        });
+      });
+      
+      // 테이블 정렬 함수
+      function sortTable(table, colIndex, direction) {
+        const tbody = table.querySelector('tbody');
+        if (!tbody) return; // tbody가 없으면 중단
+        
+        const rows = Array.from(tbody.querySelectorAll('tr'));
+        
+        // 행 정렬
+        rows.sort(function(rowA, rowB) {
+          // 현재 열의 셀 가져오기
+          const cellsA = rowA.querySelectorAll('td, th');
+          const cellsB = rowB.querySelectorAll('td, th');
+          
+          // index 범위 확인
+          if (colIndex >= cellsA.length || colIndex >= cellsB.length) return 0;
+          
+          const cellA = cellsA[colIndex].textContent.trim();
+          const cellB = cellsB[colIndex].textContent.trim();
+          
+          // 날짜 형식 확인 (YYYY-MM-DD 또는 YYYY/MM/DD)
+          const dateRegex = /^(\d{4}[-\/]\d{2}[-\/]\d{2}|\d{2}[-\/]\d{2}[-\/]\d{4})$/;
+          if (dateRegex.test(cellA) && dateRegex.test(cellB)) {
+            const dateA = new Date(cellA);
+            const dateB = new Date(cellB);
+            return direction === 'asc' ? dateA - dateB : dateB - dateA;
+          }
+          
+          // 숫자인 경우 숫자 정렬
+          if (!isNaN(parseFloat(cellA)) && !isNaN(parseFloat(cellB))) {
+            return direction === 'asc' 
+              ? parseFloat(cellA) - parseFloat(cellB)
+              : parseFloat(cellB) - parseFloat(cellA);
+          }
+          
+          // 일반 문자열 정렬
+          return direction === 'asc'
+            ? cellA.localeCompare(cellB)
+            : cellB.localeCompare(cellA);
+        });
+        
+        // 정렬된 행을 테이블에 다시 추가
+        rows.forEach(function(row) {
+          tbody.appendChild(row);
+        });
+        
+        // 정렬 후 다시 길이 검사 (필요한 경우)
+        const dataCells = table.querySelectorAll('tbody td');
+        dataCells.forEach(function(cell) {
+          if (!cell.classList.contains('long-content')) return;
+          
+          // 셀 내용이 여전히 길면 long-content 클래스 유지, 아니면 제거
+          const cellContent = cell.textContent;
+          const tempSpan = document.createElement('span');
+          tempSpan.style.visibility = 'hidden';
+          tempSpan.style.position = 'absolute';
+          tempSpan.style.whiteSpace = 'nowrap';
+          tempSpan.style.font = window.getComputedStyle(cell).font;
+          tempSpan.textContent = cellContent;
+          document.body.appendChild(tempSpan);
+          
+          const contentWidth = tempSpan.getBoundingClientRect().width;
+          if (contentWidth <= 380) {
+            cell.classList.remove('long-content');
+          }
+          
+          document.body.removeChild(tempSpan);
+        });
+      }
+    });
+  </script>
 </head>
-
 
 
 
