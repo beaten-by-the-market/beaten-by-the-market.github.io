@@ -2,7 +2,7 @@
 layout: single
 title:  "기술성장 특례로 상장한 기업들은 어디일까?"
 categories: 한국시장
-tag: [krx, data background, insight, 상]
+tag: [krx, data background, insight, 상장]
 toc: true
 author_profile: false
 ---
