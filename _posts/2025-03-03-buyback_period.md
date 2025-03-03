@@ -362,7 +362,7 @@ author_profile: false
 <br>
 ![mktvsotc]({{site.url}}/assets/images/2025-03-02-buybackperiod/mktvsotc.png)<br><br>
 
-[***자사주 매입: 시간외대량매매의 비중은 얼마일까?(링크)***{: style="color: #4682B4;"}](https://beaten-by-the-market.github.io/%EA%B5%AD%EB%82%B4%EC%8B%9C%EC%9E%A5/buyback_blockdeal/) 포스팅에서도 확인했지만, 장내매매 중에서 시간외대량매매는 예금보험공사로부터 매입한 두 가지 사례밖에 없었습니다. 이 둘을 제외한 장내매매 내용을 일단 10개 확인해보겠습니다. 
+[***자사주 매입: 시간외대량매매의 비중은 얼마일까?(링크)***{: style="color: #4682B4;"}](https://beaten-by-the-market.github.io/%ED%95%9C%EA%B5%AD%EC%8B%9C%EC%9E%A5/buyback_blockdeal/) 포스팅에서도 확인했지만, 장내매매 중에서 시간외대량매매는 예금보험공사로부터 매입한 두 가지 사례밖에 없었습니다. 이 둘을 제외한 장내매매 내용을 일단 10개 확인해보겠습니다. 
 
 <pre>
 시간외대량매매가 아닌 장내매매 건수 : 613

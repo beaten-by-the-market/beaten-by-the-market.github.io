@@ -301,7 +301,7 @@ author_profile: false
 **[관련 포스팅]** [자사주 매매 데이터출처](https://beaten-by-the-market.github.io/%ED%95%9C%EA%B5%AD%EC%8B%9C%EC%9E%A5/buybackexplanation2/)<br>
 **[관련 포스팅]** [10년간 코스피 자사주 직접취득 현황(시사점)](https://beaten-by-the-market.github.io/%ED%95%9C%EA%B5%AD%EC%8B%9C%EC%9E%A5/kospi-buyback-insight/)<br>
 **[관련 포스팅]** [10년간 코스피 자사주 직접 ‘처분’ 현황(시사점)](https://beaten-by-the-market.github.io/%ED%95%9C%EA%B5%AD%EC%8B%9C%EC%9E%A5/kospi_dart_buyback_resale/)<br>
-**[관련 포스팅]** [자사주 매입: 시간외대량매매의 비중은 얼마일까?](https://beaten-by-the-market.github.io/%EA%B5%AD%EB%82%B4%EC%8B%9C%EC%9E%A5/buyback_blockdeal/)
+**[관련 포스팅]** [자사주 매입: 시간외대량매매의 비중은 얼마일까?](https://beaten-by-the-market.github.io/%ED%95%9C%EA%B5%AD%EC%8B%9C%EC%9E%A5/buyback_blockdeal/)
 {:.notice--success}
 
 
