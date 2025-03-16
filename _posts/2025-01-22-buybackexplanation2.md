@@ -356,7 +356,7 @@ OpenDart API의 경우 회사코드가 필수 입력인자라서 상장사 개�
 ### 장내에서 취득하는 경우
 
 <br>
-[**KRX 정보데이터시스템**{: style="color: #4682B4;"}](http://data.krx.co.kr/contents/MDC/MDI/mdiLoader/index.cmd?menuId=MDC0202) 의 의 "이슈통계 - 자사주추득/처분"메뉴에서는 전체 상장사의 자사주 관련 누적 매매실적을 확인할 수 있습니다. <br>
+[**KRX 정보데이터시스템**{: style="color: #4682B4;"}](http://data.krx.co.kr/contents/MDC/MDI/mdiLoader/index.cmd?menuId=MDC0202) 의 의 "이슈통계 - 자사주취득/처분"메뉴에서는 전체 상장사의 자사주 관련 누적 매매실적을 확인할 수 있습니다. <br>
 
 제공되는 데이터중 "공시일"과 "취득(처분)예정기간"은 금감원에 제출된 공시의 내용을 기반으로 합니다. 따라서 자기주식을 취득/처분하겠다는 **각 의사결정별로 실제로 얼마나 이행했는지를 확인**{: style="color: #4682B4;"}해볼 수 있는 부분입니다. 물론 장내에 한정해서요.<br>
 <br>

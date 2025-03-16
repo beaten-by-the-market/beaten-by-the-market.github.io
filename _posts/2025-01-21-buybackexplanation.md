@@ -342,7 +342,7 @@ author_profile: false
 [출처](https://regulation.krx.co.kr/contents/RGL/03/03010305/RGL03010305.jsp)
 
 <br>
-그리고 위의 데이터는 [KRX 정보데이터시스템의 "이슈통계 - 자사주추득/처분"](http://data.krx.co.kr/contents/MDC/MDI/mdiLoader/index.cmd?menuId=MDC0202) 메뉴에서 확인할 수 있습니다.
+그리고 위의 데이터는 [KRX 정보데이터시스템의 "이슈통계 - 자사주취득/처분"](http://data.krx.co.kr/contents/MDC/MDI/mdiLoader/index.cmd?menuId=MDC0202) 메뉴에서 확인할 수 있습니다.
 <br>
 
 ### 장외에서 취득하는 경우
