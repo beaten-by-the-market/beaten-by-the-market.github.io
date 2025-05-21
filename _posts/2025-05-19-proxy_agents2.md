@@ -296,7 +296,7 @@ author_profile: false
 </head>
 
 **[관련 포스팅]** [의결권 원기옥: 주주들이여, 제게 의결권을 나눠주세요!](https://beaten-by-the-market.github.io/%ED%95%9C%EA%B5%AD%EC%8B%9C%EC%9E%A5/proxy/)<br>
-**[관련 포스팅]** [의결권 원기옥을 모으기 위해서는 대리인이 필요하다?](https://beaten-by-the-market.github.io/%ED%95%9C%EA%B5%AD%EC%8B%9C%EC%9E%A5/proxy1/)<br>
+**[관련 포스팅]** [의결권 원기옥을 모으기 위해서는 대리인이 필요하다?](https://beaten-by-the-market.github.io/%ED%95%9C%EA%B5%AD%EC%8B%9C%EC%9E%A5/proxy_agents1/)<br>
 {:.notice--success}
 
 
