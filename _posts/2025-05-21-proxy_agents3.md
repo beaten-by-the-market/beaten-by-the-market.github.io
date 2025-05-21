@@ -296,13 +296,13 @@ author_profile: false
 </head>
 
 **[관련 포스팅]** [의결권 원기옥: 주주들이여, 제게 의결권을 나눠주세요!](https://beaten-by-the-market.github.io/%ED%95%9C%EA%B5%AD%EC%8B%9C%EC%9E%A5/proxy/)<br>
-**[관련 포스팅]** [의결권 원기옥을 모으기 위해서는 대리인이 필요하다?](https://beaten-by-the-market.github.io/%ED%95%9C%EA%B5%AD%EC%8B%9C%EC%9E%A5/proxy1/)<br>
-**[관련 포스팅]** [니가 그렇게 의결권이 많아? 주총장으로 따라와](https://beaten-by-the-market.github.io/%ED%95%9C%EA%B5%AD%EC%8B%9C%EC%9E%A5/proxy2/)<br>
+**[관련 포스팅]** [의결권 원기옥을 모으기 위해서는 대리인이 필요하다?](https://beaten-by-the-market.github.io/%ED%95%9C%EA%B5%AD%EC%8B%9C%EC%9E%A5/proxy_agents1/)<br>
+**[관련 포스팅]** [니가 그렇게 의결권이 많아? 주총장으로 따라와](https://beaten-by-the-market.github.io/%ED%95%9C%EA%B5%AD%EC%8B%9C%EC%9E%A5/proxy_agents2/)<br>
 {:.notice--success}
 
 
 ## Proxy Fight의 유형 복습
-지난 포스팅[(니가 그렇게 의결권이 많아? 주총장으로 따라와, 링크)](https://beaten-by-the-market.github.io/%ED%95%9C%EA%B5%AD%EC%8B%9C%EC%9E%A5/proxy2/)에서는 의결권 대리행사 권유를 2개 주체 이상이 하는 경우를 케이스별로 나누어 보았습니다. 
+지난 포스팅[(니가 그렇게 의결권이 많아? 주총장으로 따라와, 링크)](https://beaten-by-the-market.github.io/%ED%95%9C%EA%B5%AD%EC%8B%9C%EC%9E%A5/proxy_agents2/)에서는 의결권 대리행사 권유를 2개 주체 이상이 하는 경우를 케이스별로 나누어 보았습니다. 
 
 * **Case 1: 싸움처럼 보이지만 싸움이 아닌 경우**{: style="color: #4682B4;"}<br>
 * **Case 2: 무리한 도전, 무시하는 회사**{: style="color: #4682B4;"}<br>
