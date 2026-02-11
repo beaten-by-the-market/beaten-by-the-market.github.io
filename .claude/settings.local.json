@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"c:\\\\Users\\\\Peter\\\\github\\\\beaten-by-the-market.github.io\" log --oneline -15)",
+      "Bash(ruby --version:*)",
+      "Bash(git --version:*)",
+      "WebFetch(domain:beaten-by-the-market.github.io)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(curl:*)",
+      "Bash(python3:*)",
+      "Bash(where:*)",
+      "Bash(C:UsersPeterAppDataLocalProgramsPythonPython313python.exe -c \"import pandas; print\\(''pandas OK''\\)\")",
+      "Bash(py -c:*)",
+      "Bash(del \"\\\\?\\\\C:\\\\Users\\\\Peter\\\\github\\\\beaten-by-the-market.github.io\\\\nul\")",
+      "Bash(cmd /c \"del \\\\?\\\\C:\\\\Users\\\\Peter\\\\github\\\\beaten-by-the-market.github.io\\\\nul\")",
+      "Bash(cmd /c:*)",
+      "Bash(powershell -Command:*)",
+      "Bash(python -c \"import os; os.remove\\(''\\\\\\\\?\\\\C:\\\\Users\\\\Peter\\\\github\\\\beaten-by-the-market.github.io\\\\nul''\\)\")",
+      "Bash(python -c \"import os; os.remove\\(r''\\\\?\\\\C:\\\\Users\\\\Peter\\\\github\\\\beaten-by-the-market.github.io\\\\nul''\\)\")",
+      "Bash(python -c \"import ctypes; ctypes.windll.kernel32.DeleteFileW\\(r''\\\\\\\\?\\\\C:\\\\Users\\\\Peter\\\\github\\\\beaten-by-the-market.github.io\\\\nul''\\)\")",
+      "Bash(python -c \"\nimport ctypes\nresult = ctypes.windll.kernel32.DeleteFileW\\(r''\\\\\\\\?\\\\C:\\\\Users\\\\Peter\\\\github\\\\beaten-by-the-market.github.io\\\\nul''\\)\nerr = ctypes.windll.kernel32.GetLastError\\(\\)\nprint\\(f''Result: {result}, Error: {err}''\\)\n\")",
+      "Bash(python:*)",
+      "Bash(git checkout:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\n코스닥 신규상장 포스팅 추가\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)"
+    ]
+  }
+}
