@@ -24,7 +24,14 @@
       "Bash(git checkout:*)",
       "Bash(git add:*)",
       "Bash(git commit -m \"$\\(cat <<''EOF''\n코스닥 신규상장 포스팅 추가\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(awk:*)",
+      "Bash(ls:*)",
+      "Read(//c/**)",
+      "Bash(/c/Users/Peter/AppData/Local/Programs/Python/Python313/python:*)",
+      "Bash(pip show:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)"
     ]
   }
 }
