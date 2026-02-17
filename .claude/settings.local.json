@@ -31,7 +31,9 @@
       "Bash(/c/Users/Peter/AppData/Local/Programs/Python/Python313/python:*)",
       "Bash(pip show:*)",
       "Bash(find:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(py:*)",
+      "Bash(# Get all 파두 rows from the larger file too grep \"\"^440110\"\" \"\"/c/Users/Peter/Desktop/코스닥신규상장분석/krx_data/daeryang_hld_mth_ipo_2.5yr_31695.csv\"\")"
     ]
   }
 }
