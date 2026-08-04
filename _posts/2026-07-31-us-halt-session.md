@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "나스닥 거래정지의 절반이 밤 7시 50분에 걸립니다"
+title:  "갑자기 궁금해진 나스닥의 거래정지 현황"
 categories: 미국시장
 tag: [data background, 미국시장, 거래정지, 나스닥]
 toc: true
