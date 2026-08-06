@@ -1,11 +1,166 @@
 ---
 layout: single
-title:  "미국 기업은 뉴스 낼 시각을 예약하고, 거래소는 5분 전에 멈춥니다"
+title:  "나스닥 상장사는 거래정지 시각을 예약하고, 나스닥이 거래정지를 걸어줍니다"
 categories: 미국시장
 tag: [data background, 미국시장, 거래정지, 나스닥, 공시]
 toc: true
 author_profile: false
 ---
+
+<style>
+  /* 순서형 도식 */
+  .flow {
+    margin: 1.6em 0;
+  }
+  .flow-step {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6em;
+    padding: 0.6em 0.9em;
+    background: #f7f9fb;
+    border: 1px solid #dde3e9;
+    border-left: 4px solid #4682B4;
+    border-radius: 4px;
+    font-size: 0.92em;
+    line-height: 1.55;
+  }
+  .flow--alt .flow-step {
+    background: #fdf8f3;
+    border-left-color: #C4762F;
+  }
+  .flow-num {
+    flex: 0 0 auto;
+    font-weight: 700;
+    color: #4682B4;
+  }
+  .flow--alt .flow-num {
+    color: #C4762F;
+  }
+  .flow-note {
+    display: block;
+    margin-top: 0.25em;
+    color: #7a848e;
+    font-size: 0.88em;
+  }
+  .flow-arrow {
+    margin: 0.3em 0;
+    padding-left: 1.1em;
+    color: #b6bec6;
+    font-size: 0.85em;
+    line-height: 1.2;
+  }
+  .flow-arrow--wait {
+    color: #C4762F;
+    font-weight: 600;
+  }
+
+  /* 좌우 비교 도식 */
+  .cmp {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin: 1.6em 0;
+  }
+  .cmp-col {
+    flex: 1 1 280px;
+    min-width: 0;
+    padding: 0.9em 1.1em;
+    background: #f7f9fb;
+    border: 1px solid #dde3e9;
+    border-top: 3px solid #4682B4;
+    border-radius: 4px;
+    font-size: 0.92em;
+    line-height: 1.6;
+  }
+  .cmp-col--alt {
+    background: #fdf8f3;
+    border-top-color: #C4762F;
+  }
+  .cmp-head {
+    font-weight: 700;
+    color: #4682B4;
+    margin-bottom: 0.15em;
+  }
+  .cmp-col--alt .cmp-head {
+    color: #C4762F;
+  }
+  .cmp-sub {
+    color: #7a848e;
+    font-size: 0.9em;
+    margin-bottom: 0.7em;
+  }
+  .cmp-body {
+    margin: 0;
+  }
+  .cmp-tail {
+    display: block;
+    margin-top: 0.35em;
+    color: #7a848e;
+    font-size: 0.88em;
+  }
+
+  /* 제출 서식 도식 */
+  .fields {
+    margin: 1.6em 0;
+    border: 1px solid #dde3e9;
+    border-radius: 4px;
+    overflow: hidden;
+    font-size: 0.92em;
+    line-height: 1.55;
+  }
+  .fields-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.3em 1em;
+    padding: 0.55em 1em;
+    background: #eef2f6;
+    border-bottom: 1px solid #dde3e9;
+    color: #5a646e;
+    font-size: 0.88em;
+  }
+  .fields-head b {
+    color: #2f3a44;
+  }
+  .fields-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.15em 1em;
+    padding: 0.55em 1em;
+    background: #fff;
+    border-top: 1px solid #eef1f4;
+  }
+  .fields-row:first-of-type {
+    border-top: 0;
+  }
+  .fields-row--key {
+    background: #f2f7fb;
+    box-shadow: inset 3px 0 0 #4682B4;
+  }
+  .fields-name {
+    flex: 0 0 15em;
+    font-weight: 600;
+    color: #2f3a44;
+  }
+  .fields-row--key .fields-name {
+    color: #4682B4;
+  }
+  .fields-req {
+    color: #c0392b;
+  }
+  .fields-desc {
+    flex: 1 1 12em;
+    min-width: 0;
+    color: #5a646e;
+  }
+  .fields-hint {
+    color: #98a1aa;
+    font-size: 0.9em;
+  }
+  @media (max-width: 480px) {
+    .fields-name { flex-basis: 100%; }
+  }
+</style>
 
 ## 원래 물어보려던 것
 
@@ -136,26 +291,31 @@ author_profile: false
 
 ### 예약형 - 회사가 시각을 정합니다
 
-```text
-① 회사가 보도자료 초안과 배포 예정 시각을 MarketWatch에 제출
-② 나스닥이 검토 후 예정 시각 직전에 거래정지
-③ 회사가 예정대로 Newswire에 배포          ← 뉴스는 정지 뒤에 나온다
-④ 얼마 뒤 거래 재개
-⑤ 몇 시간 뒤 EDGAR에 8-K 제출
-```
+<div class="flow" markdown="0">
+  <div class="flow-step"><span class="flow-num">①</span><span>회사가 보도자료 초안과 배포 예정 시각을 <b>MarketWatch</b>에 제출</span></div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step"><span class="flow-num">②</span><span>나스닥이 검토 후 예정 시각 직전에 <b>거래정지</b></span></div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step"><span class="flow-num">③</span><span>회사가 예정대로 <b>Newswire에 배포</b><span class="flow-note">뉴스는 정지 뒤에 나온다</span></span></div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step"><span class="flow-num">④</span><span>얼마 뒤 <b>거래 재개</b></span></div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step"><span class="flow-num">⑤</span><span>몇 시간 뒤 <b>EDGAR</b>에 8-K 제출</span></div>
+</div>
 
 **뉴스보다 정지가 먼저입니다.** 한국식으로 옮기면 *공시를 내겠다고 예고한 시점에 거래가 멈추고, 멈춘 뒤에 공시가 나오는* 모양입니다. 거래소는 **아직 세상에 없는 뉴스를 손에 쥔 채**{: style="color: #4682B4;"} 정지를 걸지 말지 판단합니다.
 
 **참고 - ①의 「예약」은 이렇게 합니다.**{: style="color: #4682B4;"} 나스닥은 MarketWatch 전용 제출 서식을 운영하는데, 그 **필수 입력란**이 이렇습니다.
 
-```text
-Issue Symbol *                    종목
-Scheduled Release Date/Time *     예정 배포 일시  (MM/DD/YYYY HH:MM AM/PM)
-Headline Title *                  보도자료 제목
-Disclosure Method *               배포 방식 (보도자료 · SEC 공시 · 컨퍼런스콜 …)
-News Category *                   뉴스 분류 (복수 선택, 14가지)
-Attach Disclosure *               보도자료 원문 첨부
-```
+<div class="fields" markdown="0">
+  <div class="fields-head"><b>Nasdaq MarketWatch — Electronic Disclosure</b><span><span class="fields-req">*</span> 필수 입력</span></div>
+  <div class="fields-row"><span class="fields-name">Issue Symbol <span class="fields-req">*</span></span><span class="fields-desc">종목</span></div>
+  <div class="fields-row fields-row--key"><span class="fields-name">Scheduled Release Date/Time <span class="fields-req">*</span></span><span class="fields-desc">예정 배포 일시 <span class="fields-hint">MM/DD/YYYY HH:MM AM/PM</span></span></div>
+  <div class="fields-row"><span class="fields-name">Headline Title <span class="fields-req">*</span></span><span class="fields-desc">보도자료 제목</span></div>
+  <div class="fields-row"><span class="fields-name">Disclosure Method <span class="fields-req">*</span></span><span class="fields-desc">배포 방식 <span class="fields-hint">보도자료 · SEC 공시 · 컨퍼런스콜 …</span></span></div>
+  <div class="fields-row"><span class="fields-name">News Category <span class="fields-req">*</span></span><span class="fields-desc">뉴스 분류 <span class="fields-hint">복수 선택, 14가지</span></span></div>
+  <div class="fields-row"><span class="fields-name">Attach Disclosure <span class="fields-req">*</span></span><span class="fields-desc">보도자료 원문 첨부</span></div>
+</div>
 
 [***(나스닥 MarketWatch 통지 서식 - Electronic Disclosure(링크))***](https://www.nasdaq.net/ED/IssuerEntry.aspx)
 
@@ -165,12 +325,15 @@ Attach Disclosure *               보도자료 원문 첨부
 
 FDA 승인처럼 회사가 시각을 못 정하는 뉴스에는 첫 단계가 없습니다. 예고할 시각이 없으니 예약도 없습니다.
 
-```text
-① 규제기관의 결정이 도착 (보도자료는 아직 없다)
-② 거래정지                          ← 정지가 먼저인 것은 같지만
-③ 회사가 자료를 준비해 배포          ← 예약형과 달리 여기가 벌어진다
-④ 거래 재개
-```
+<div class="flow flow--alt" markdown="0">
+  <div class="flow-step"><span class="flow-num">①</span><span><b>규제기관의 결정이 도착</b><span class="flow-note">보도자료는 아직 없다</span></span></div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step"><span class="flow-num">②</span><span><b>거래정지</b><span class="flow-note">정지가 먼저인 것은 예약형과 같지만</span></span></div>
+  <div class="flow-arrow flow-arrow--wait">↓<br>⋮ &nbsp;여기가 벌어진다<br>↓</div>
+  <div class="flow-step"><span class="flow-num">③</span><span>회사가 자료를 준비해 <b>배포</b></span></div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step"><span class="flow-num">④</span><span><b>거래 재개</b></span></div>
+</div>
 
 **정지가 뉴스보다 먼저라는 점은 두 갈래가 같습니다.**{: style="color: #4682B4;"} 갈리는 것은 **거래정지와 배포 사이**의 간격입니다.
 
@@ -188,10 +351,10 @@ FDA 승인처럼 회사가 시각을 못 정하는 뉴스에는 첫 단계가 �
 
 그리고 남은 두 질문이 정확히 이 그림의 빈칸입니다.
 
-```text
-「언제」    정지는 예정 시각의 몇 분 전인가.  그 예정 시각을 회사는 몇 시로 잡는가
-「얼마나」  정지에서 재개까지 몇 분인가.      돌발형은 정지에서 배포까지 얼마나 벌어지는가
-```
+| 남은 질문 | 채워야 할 빈칸 | |
+|---|---|---|
+| **「언제」** | 정지는 예정 시각의 몇 분 전인가 | 그 예정 시각을 회사는 몇 시로 잡는가 |
+| **「얼마나」** | 정지에서 재개까지 몇 분인가 | 돌발형은 정지에서 배포까지 얼마나 벌어지는가 |
 
 두 갈래가 각각 몇 건인지도 아직 모릅니다. 세어 보겠습니다.
 
@@ -361,11 +524,18 @@ FDA 승인처럼 회사가 시각을 못 정하는 뉴스에는 첫 단계가 �
 참고로 정규장 밖에서도 마찬가지 현상은 있습니다. Vanda Pharmaceuticals(VNDA)는 2026년 2월 20일 **16시 17분**, 장이 닫힌 뒤에 정지됐는데도 FDA 승인 발표가 **17시 59분**에 나와 101분을 기다렸고, 그 21분 뒤인 18시 20분에 재개되었습니다. 장 밖이어도 규제기관이 시각을 쥐고 있으면 5분은 성립하지 않습니다.
 
 아래와 같이 정리해볼 수 있습니다.
-```text
-① 예약형   회사가 시각을 정한다      통상 장 밖으로 예약 → 발표 5분 전 정지  → 발표 +30분 재개
-② 돌발형   규제기관이 시각을 정한다   통보 시점에 정지 → 발표를 기다림   → 발표 뒤 재개
-                                            (정규장 중앙값 74.0분)
-```
+<div class="cmp" markdown="0">
+  <div class="cmp-col">
+    <div class="cmp-head">① 예약형</div>
+    <div class="cmp-sub">회사가 시각을 정한다</div>
+    <p class="cmp-body">통상 장 밖으로 예약<br>→ <b>발표 5분 전</b>에 정지<br>→ <b>발표 +30분</b>에 재개</p>
+  </div>
+  <div class="cmp-col cmp-col--alt">
+    <div class="cmp-head">② 돌발형</div>
+    <div class="cmp-sub">규제기관이 시각을 정한다</div>
+    <p class="cmp-body"><b>통보 시점</b>에 정지<br>→ 발표를 기다림<br>→ <b>발표 뒤</b> 재개<span class="cmp-tail">정규장 중앙값 74.0분</span></p>
+  </div>
+</div>
 
 숫자로 보면, **장 밖에서 예정대로 처리된 것이 349건 중 312건(89.4%)**{: style="color: #4682B4;"}이고, 예약이 통하지 않아 정규장 한복판에 걸린 것이 37건(10.6%)입니다.
 
@@ -385,29 +555,19 @@ FDA 승인처럼 회사가 시각을 못 정하는 뉴스에는 첫 단계가 �
 
 ## 데이터가 말해주는 것
 
-1편의 질문은 **"거래정지를 사람이 걸어야 하는가"**{: style="color: #4682B4;"}였습니다. 세 편에 걸쳐 데이터를 보고 나니, 나스닥의 답은 "사람을 더 붙인다"도 "사람을 없앤다"도 아니었습니다.
+**"뉴스관련 거래정지를 사람이 걸어야 하는가"**{: style="color: #4682B4;"} 질문으로 돌아가 보겠습니다. 답은 "사람이 거는 것은 맞다"인데, **"어떤 사람이 실질적으로 거는가"**{: style="color: #4682B4;"}가 차이가 있었습니다.
+즉, **상장법인 직원이 거래정지 시각을 제공할 것인가, 나스닥 직원이 거래정지를 결정할 것인가**{: style="color: #4682B4;"}의 차이인 것입니다.
 
-**나스닥의 거래정지는 세 층으로 나뉘어 있고, 시각을 정하는 주체가 층마다 다릅니다.**{: style="color: #4682B4;"}
+앞의 내용을 다시 요약해보겠습니다. **나스닥의 뉴스관련 거래정지는 두 층으로 나뉘어 있고, 시각을 정하는 주체가 층마다 다릅니다.**{: style="color: #4682B4;"}
 
-```text
-① 기계가 건다      변동성 정지(LULD)    가격이 밴드를 벗어난 순간
-② 회사가 예약한다   뉴스 정지             발표 10분 전 통지 → 06:55·07:25·07:55
-   ②' 예약이 안 되는 뉴스   FDA 결정 등    통보 시점에 정지 → 발표를 기다림
-③ 규정이 건다      기업행위 정지         액면병합 전날 19:50, 거래소 재량 없음
-```
+| 층 | 시각을 정하는 주체 | 어떻게 걸리나 |
+|---|---|---|
+| **① 예약되는 뉴스** | 회사 | 발표 **10분 전 통지** → 06:55·07:25·07:55에 정지 |
+| **② 예약이 안 되는 뉴스** | 규제기관 (FDA 결정 등) | **통보 시점**에 정지 → 발표를 기다림 |
 
-첫째, **①은 애초에 사람이 없습니다.** 가격 조건이 충족되면 기계가 겁니다. 초 단위가 0부터 59까지 고르게 흩어진 유일한 집단입니다.
+첫째, **거래정지 여부는 사람이 판단하지만 시각은 회사가 정합니다.**{: style="color: #4682B4;"} 상장법인이 Newswire 보도자료 배포 시각을 나스닥에 통지하면 나스닥은 그 직전에 세웁니다. 
 
-둘째, **②는 사람이 판단하지만 시각은 회사가 정합니다.**{: style="color: #4682B4;"} 거래소가 뉴스를 보고 놀라서 세우는 것이 아니라, 회사가 Newswire 보도자료 배포 시각을 통지하면 그 직전에 세웁니다. 다만 **예약이 불가능한 몫이 남습니다.** FDA 승인처럼 시각을 규제기관이 쥔 뉴스는 통보가 오는 순간에 멈추고 발표까지 기다립니다. **거래소가 줄인 것은 사람의 판단이지 기다림 자체가 아닙니다.**{: style="color: #4682B4;"}
-
-셋째, **③은 사람의 판단을 아예 배제했습니다.**{: style="color: #4682B4;"} 주식병합처럼 일정이 미리 정해져 있고 처리 절차가 매번 같은 사건은 규정으로 옮겼습니다. 재량이 없으면 판단의 일관성 문제도, 늦었다는 책임 문제도 생기지 않습니다. **이번 편에서 349건을 골라내기 위해 걷어내야 했던 것이 바로 이 층입니다.** 뉴스 코드를 달고 있지만 뉴스가 아닙니다.
-
-그리고 이 구조는 **계속 넓어지고 있습니다.**{: style="color: #4682B4;"} 2026년 7월, 나스닥은 Rule 4120을 다시 개정해 ③의 대상을 **아홉 가지**{: style="color: #4682B4;"}로 못박았습니다. 종목코드 변경, CUSIP 변경, **종가의 25% 이상 배당**{: style="color: #4682B4;"}, 주식분할(정·역), **디스팩 거래**{: style="color: #4682B4;"}, 인적분할, 증권 종류 변경, 합병·강제교환, 그리고 여기 열거되지 않은 그 밖의 기업행위입니다.
-
-명분은 23시간 거래 도입입니다. 거래 시간이 길어지면 밤사이 조정할 여유가 사라지므로, 사람이 아니라 규정이 처리하는 영역을 미리 넓혀 놓는 것입니다. **다만 아직 시행 전입니다.** 이 개정은 *"23/5 Trading이 시작되는 시점에 발효된다"*고 못박고 있습니다.
-
-[***(나스닥 Rule 4120 확대 개정(링크))***](https://www.federalregister.gov/documents/2026/07/13/2026-14014/self-regulatory-organizations-the-nasdaq-stock-market-llc-notice-of-filing-and-immediate)
-
+둘째, 상장법인이 Newswire 보도자료 배포시각을 결정할 수 없는 때, 즉 FDA 승인처럼 **통제불가한 외부요인 뉴스는 통보가 오는 순간에 멈추고 발표까지 기다립니다.**{: style="color: #4682B4;"}
 
 **[관련 포스팅]** [갑자기 궁금해진 나스닥의 거래정지 현황]({{site.url}}/미국시장/us-halt-session/)<br>
 **[관련 포스팅]** [나스닥에 몰렸던 19시 50분 거래정지의 정체는 주식병합이었습니다]({{site.url}}/미국시장/us-halt-reverse-split/)<br>
