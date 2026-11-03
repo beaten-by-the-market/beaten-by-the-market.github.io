@@ -1,5 +1,7 @@
 # main links
 main:
+  - title: "Naver Blog"
+    url: /naver-blog/
   - title: "Category"
     url: /categories/
   - title: "Tag"

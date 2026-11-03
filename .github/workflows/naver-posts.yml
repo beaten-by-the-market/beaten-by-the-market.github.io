@@ -1,0 +1,58 @@
+name: Sync Naver blog posts
+
+# 네이버 블로그 RSS를 읽어 _data/naver_posts.json을 갱신하고,
+# 바뀐 경우에만 커밋한 뒤 GitHub Pages 빌드를 요청합니다.
+on:
+  schedule:
+    - cron: '17 * * * *' # 매시간 17분(UTC). 정각 혼잡을 피해 분을 비켜 둡니다.
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: naver-posts
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: github.repository == 'beaten-by-the-market/beaten-by-the-market.github.io'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Collect RSS
+        run: python -I _scripts/sync_naver_posts.py
+
+      - name: Commit and push if changed
+        id: commit
+        shell: bash
+        run: |
+          git add -- _data/naver_posts.json
+          if git diff --cached --quiet; then
+            echo "No change in Naver post list."
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "자동: 네이버 블로그 글 목록 갱신"
+          # 그 사이 master에 새 커밋이 있으면 그 위에 올립니다. 이 파일은 봇만 수정합니다.
+          git pull --rebase origin master
+          git push origin HEAD:master
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+
+      # GITHUB_TOKEN으로 한 푸시는 Pages 빌드를 시작하지 않을 수 있어 직접 요청합니다.
+      - name: Request Pages build
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds"
