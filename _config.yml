@@ -311,8 +311,29 @@ compress_html:
     envs: development
 
 
+# Collections
+# _naver/<글번호>.md: 네이버 블로그 글마다 하나씩 두는 소개 페이지.
+# _scripts/sync_naver_posts.py가 머리말을 만들고, 본문(소개글)은 사람이 씁니다.
+collections:
+  naver:
+    output: true
+    permalink: /naver-blog/:name/
+
+
 # Defaults
 defaults:
+  # _naver
+  - scope:
+      path: ""
+      type: naver
+    values:
+      layout: naver-post
+      author_profile: true
+      read_time: false
+      share: false
+      related: false
+      show_date: true
+      toc: false
   # _posts
   - scope:
       path: ""

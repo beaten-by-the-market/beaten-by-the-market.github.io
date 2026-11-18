@@ -1,6 +1,6 @@
 name: Sync Naver blog posts
 
-# 네이버 블로그 RSS를 읽어 _data/naver_posts.json을 갱신하고,
+# 네이버 블로그 RSS를 읽어 _data/naver_posts.json과 글별 소개 페이지(_naver/)를 갱신하고,
 # 바뀐 경우에만 커밋·푸시합니다. master 푸시가 GitHub Pages 빌드를 시작합니다.
 on:
   schedule:
@@ -34,7 +34,7 @@ jobs:
       - name: Commit and push if changed
         shell: bash
         run: |
-          git add -- _data/naver_posts.json
+          git add -- _data/naver_posts.json _naver/
           if git diff --cached --quiet; then
             echo "No change in Naver post list."
             exit 0
@@ -42,6 +42,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -m "자동: 네이버 블로그 글 목록 갱신"
-          # 그 사이 master에 새 커밋이 있으면 그 위에 올립니다. 이 파일은 봇만 수정합니다.
+          # 그 사이 master에 새 커밋이 있으면 그 위에 올립니다. 목록 JSON과 _naver/ 머리말은
+          # 봇만 수정하고, 사람은 _naver/ 본문만 고칩니다.
           git pull --rebase origin master
           git push origin HEAD:master
